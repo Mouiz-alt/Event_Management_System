@@ -5,8 +5,7 @@ const feedbackSchema = require("../model/feedbackSchema");
 const eventRoute = express.Router();
 const mongoose = require("mongoose");
 
-// --------------------------------------------------------------------------------
-// User
+
 eventRoute.get("/user-list", (req,res) => {
     userSchema.find((err, data) => {
         if(err)
@@ -63,8 +62,7 @@ eventRoute.delete("/delete-user/:id",(req,res)=>{
 })
 
 
-// -----------------------------------------------------------------------------------------
-// Events
+
 eventRoute.get("/event-list", (req,res) => {
     eventSchema.find((err, data) => {
         if(err)
@@ -123,7 +121,7 @@ eventRoute.delete("/delete-event/:id",(req,res)=>{
 
 
 
-// Feedback
+
 eventRoute.post("/post-feedback", (req,res) => {
     feedbackSchema.create(req.body, (err,data) => {
         if(err)
